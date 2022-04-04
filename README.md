@@ -21,7 +21,7 @@ The application then repeatedly renders offscreen quads using both Metal and Ope
 
 Sample output:
 ```
-Metal device: Intel(R) HD Graphics 630 
+Metal device: Intel(R) HD Graphics 630
 
 OpenGL
 * vendor: Intel Inc.
@@ -38,4 +38,6 @@ GPU time (usec): MTL: 653307.81, GL: 156711.17
 
 ## Metal frame capture
 The Frame Capture utility of Xcode's Metal profiler can be used to record perfomance data of a single iteration.
-The GPU trace of one such frame capture can be seen in `msaa_perf_sample.gputrace`.
+The GPU trace of one such frame capture can be seen in `msaa_perf_sample.gputrace`:
+
+![Screenshot of the GPU profile](xcode_gputrace_screenshot.png "GPU trace in Xcode. Note the number of FS Iterations and Pixels Stored.")
