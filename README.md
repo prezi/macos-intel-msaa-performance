@@ -1,11 +1,9 @@
 # macos-intel-msaa-performance
 A sample Xcode project to demonstrate 4-6 times slower MSAA performance on Intel iGPUs with Metal compared to OpenGL
 
-This project intends to demonstrate a possible bug in Intel GPU Metal drivers that causes MSAA to be several times slower than running on the same GPU with OpenGL.
-
 The issue has been reproduced in-house on three different MacBook Pros (2017, 2018, 2019) and macOS versions (11.3.1, 12.2.1, 10.15.7).
 
-The same performance different does not occur on the dedicated GPUs of the same machines.
+The same performance difference does not occur on the dedicated GPUs of the same machines.
 
 The sample application does offscreen rendering, drawing single-color fullscreen quads.
 It performs offscreen rendering to eliminate any scheduling effects from the compositor, executing a single render pass in a single command buffer.
@@ -17,7 +15,7 @@ No depth/stencil attachments, blending is disabled.
 - Ensure that only the integrated GPU is used for graphics rendering, e. g. by setting it in [gfxCardStatus](https://gfx.io/)
 - Build and run the `msaa_perf_sample` target.
 
-The application then repeatedly renders offscreen quads using both Metal and OpenGL until stopped. In each iteration, it prints the timing results in microseconds to the console.
+The application then repeatedly renders offscreen quads using both Metal and OpenGL until stopped. In each iteration, it prints the timing results (in microseconds) to the console.
 
 Sample output:
 ```
